@@ -3,6 +3,15 @@ body
 	padding: 20px;
 }
 
+h1, .h1 {
+    font-size: 1.3em;
+	margin-top: auto;
+}
+
+h2, .h2 {
+    font-size: 1.1em;
+}
+
 form
 {
 	padding: 20px;
