@@ -46,7 +46,7 @@ function calculate(){
 	ipui = document.getElementById("ipui").value
 
 	if (ipui.length < 9) {
-		alert("ERROR: Debe de haber al menos 9 dígitos hexadecimales.")
+		alert("ERRORE: L'IPUI deve contenere almeno 9 caratteri esadecimali.")
 	}
 
 	ipui = ipui.substr(1)
@@ -87,16 +87,17 @@ function calculate(){
 
 	if (document.getElementById("verbose").checked) {
 		document.getElementById("verboseBox").className = "show";
-		document.getElementById("verboseContent").innerHTML = "<br><b>EMC (16 bits)</b><br>EMC Hexadecimal: " + vipuiFirstHex + "<br>EMC Binario: " + vipuiFirstBin + "<br>EMC Decimal: " + vipuiFirstDec + "<br>EMC Binario (5 dígitos): " + vipuiFirstBinComplete + "<br><br><b>PSN (20 bits)</b><br>PSN Hexadecimal: " + vipuiLastHex + "<br>PSN Binario: " + vipuiLastBin + "<br>PSN Decimal: " + vipuiLastDec + "<br>PSN Decimal (7 dígitos): " + vipuiLastBinComplete;
+		document.getElementById("verboseContent").innerHTML = "<br><b>EMC (16 bits)</b><br>EMC Esadecimale: " + vipuiFirstHex + "<br>EMC Binario: " + vipuiFirstBin + "<br>EMC Decimale: " + vipuiFirstDec + "<br>EMC Binario (5 cifre): " + vipuiFirstBinComplete + "<br><br><b>PSN (20 bits)</b><br>PSN Esadecimale: " + vipuiLastHex + "<br>PSN Binario: " + vipuiLastBin + "<br>PSN Decimale: " + vipuiLastDec + "<br>PSN Decimale (7 cifre): " + vipuiLastBinComplete;
 
-		document.getElementById("verboseContentFinal").innerHTML = "<br><b>Resultado final</b><br>IPEI: " + vipuiFirstBinComplete + " " + vipuiLastBinComplete + " " + vcheckDigitFinal;
+		document.getElementById("verboseContentFinal").innerHTML = "<br><b>Risultato finale</b><br>IPEI: " + vipuiFirstBinComplete + " " + vipuiLastBinComplete + " " + vcheckDigitFinal;
 	};
 };
 
 
-/* Cálculo del código de control según el ETSI (EN 300 175-6 - Anexo C).
-   Cada dígito se multiplica por el número de su posición, de izquierda
-   a derecha, empezando desde el 1. */
+/* Calcolo del codice di controllo secondo l'ETSI (EN 300 175-6 - Allegato C).
+   Ogni cifra viene moltiplicata per il numero della sua posizione, da sinistra
+   a destra, a partire dal 1. */
+
 function checksum(code) {
 	var checkDigit = 0
 	var vcheckDigit = ""
@@ -116,11 +117,11 @@ function checksum(code) {
 
 	if (checkDigit == 10) {
 		checkDigit = "*"
-		vcheckDigitFinal = "10 (Se traduce a *)"
+		vcheckDigitFinal = "10 (Si trasforma in *)"
 	};
 	
 	if (document.getElementById("verbose").checked) {
-		document.getElementById("verboseContentChecksum").innerHTML = "<br><b>Checksum (ETSI EN 300 175-6)</b><br>Número sin código de control: " + code + "<br>Suma de dígitos: " + vcheckDigit + " = <b>" + vcheckDigitNoMod + "</b><br>Módulo: " + vcheckDigitNoMod + " mod 11 = " + vcheckDigitFinal;	
+		document.getElementById("verboseContentChecksum").innerHTML = "<br><b>Checksum (ETSI EN 300 175-6)</b><br>Numero senza il codice di controllo: " + code + "<br>Somma di cifre: " + vcheckDigit + " = <b>" + vcheckDigitNoMod + "</b><br>Modulo: " + vcheckDigitNoMod + " mod 11 = " + vcheckDigitFinal;	
 	};
 
 	return checkDigit
