@@ -10,24 +10,28 @@ IPUI 2 IPEI
 ### *Version History*
 
 ##### v0.1.0 "First Commit"
-  > * Basic functionality has been implemented.
-
-  > * Verbose mode.
+  * Basic functionality has been implemented.
+  * Verbose mode.
 
 ##### v0.2.0 "Bootstrapidly Modular!"
-  > * Rebuilt using Bootstrap v3.2.0
-
-  > * JS code has been migrated to an external file.
+  * Rebuilt using Bootstrap v3.2.0
+  * JS code has been migrated to an external file.
 
 ##### v0.2.1 "Cleaning up the house"
-  > * Added reset button.
-
-  > * Set IPEI (result) input tag to read only.
+  * Added reset button.
+  * Set IPEI (result) input tag to read only.
 
 ##### v0.3.0 "Validate NAOW"
-  > * Form validation is now live and will let the user know at the moment if the input is correct in a visual way.
-  
-  > * Externalized CSS styles.
+  * Form validation is now live and will let the user know at the moment if the input is correct in a visual way.
+  * Externalized CSS styles.
 
 ##### v0.3.1 "Do you speak Italian?"
-  > * Very simple italian translation.
+  * Very simple italian translation.
+
+##### v0.3.2 "Bigger is better"
+
+  * Boostrap updated to latest 3.x version
+  * Upgraded jQuery from 1.x to 3.x
+  * Added short instructions on how to get to the hidden service menu
+  * Added favicons
+  * Simple SEO support (descriptions, meta keywords and h1/h2 tags)
