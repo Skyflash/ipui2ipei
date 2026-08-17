@@ -1,0 +1,19 @@
+{% comment %}
+  Calcola le pagine sorelle della pagina corrente tramite translation_key in
+  front matter. Solo pagine (site.pages), non post: questo sito non ne ha.
+  Espone i18n_alternates come lista di stringhe "lang|url_assoluto".
+{% endcomment %}
+{% assign i18n_alternates = "" | split: "" %}
+{% if page.translation_key %}
+  {% assign siblings = site.pages | where: "translation_key", page.translation_key %}
+  {% assign it_page = siblings | where: "lang", "it_IT" | first %}
+  {% assign en_page = siblings | where: "lang", "en_US" | first %}
+  {% if it_page %}
+    {% assign it_entry = "it|" | append: it_page.url %}
+    {% assign i18n_alternates = i18n_alternates | push: it_entry %}
+  {% endif %}
+  {% if en_page %}
+    {% assign en_entry = "en|" | append: en_page.url %}
+    {% assign i18n_alternates = i18n_alternates | push: en_entry %}
+  {% endif %}
+{% endif %}

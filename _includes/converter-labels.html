@@ -1,0 +1,20 @@
+{% assign short_lang = page.lang | slice: 0, 2 | default: site.default_lang %}
+{% assign i18n = site.data.i18n %}
+<script>
+  window.ipui2ipeiLabels = {
+    validationError: {{ i18n.validation_error[short_lang] | jsonify }},
+    emcHeading: {{ i18n.emc_heading[short_lang] | jsonify }},
+    psnHeading: {{ i18n.psn_heading[short_lang] | jsonify }},
+    hexLabel: {{ i18n.hex_label[short_lang] | jsonify }},
+    binLabel: {{ i18n.bin_label[short_lang] | jsonify }},
+    decLabel: {{ i18n.dec_label[short_lang] | jsonify }},
+    digitsWord: {{ i18n.digits_word[short_lang] | jsonify }},
+    finalResultHeading: {{ i18n.final_result_heading[short_lang] | jsonify }},
+    ipeiResultLabel: {{ i18n.ipei_result_label[short_lang] | jsonify }},
+    checksumHeading: {{ i18n.checksum_heading[short_lang] | jsonify }},
+    checksumBaseLabel: {{ i18n.checksum_base_label[short_lang] | jsonify }},
+    checksumSumLabel: {{ i18n.checksum_sum_label[short_lang] | jsonify }},
+    checksumModuloLabel: {{ i18n.checksum_modulo_label[short_lang] | jsonify }},
+    checksumStarNote: {{ i18n.checksum_star_note[short_lang] | jsonify }}
+  };
+</script>

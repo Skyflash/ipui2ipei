@@ -1,0 +1,28 @@
+{% assign short_lang = page.lang | slice: 0, 2 | default: site.default_lang %}
+{% assign i18n = site.data.i18n %}
+{% include i18n-alternates.html %}
+{% if short_lang == "it" %}
+  {% assign converter_url = "/it/" %}
+  {% assign contact_url = "/it/contatti/" %}
+{% else %}
+  {% assign converter_url = "/en/" %}
+  {% assign contact_url = "/en/contact/" %}
+{% endif %}
+<div class="page-header">
+  <nav class="page-nav" aria-label="{{ i18n.nav_label[short_lang] }}">
+    <a href="{{ converter_url | relative_url }}" {% if page.translation_key == "converter" %}aria-current="true"{% endif %}>{{ i18n.nav_converter[short_lang] }}</a>
+    <a href="{{ contact_url | relative_url }}" {% if page.translation_key == "page-contact" %}aria-current="true"{% endif %}>{{ i18n.contact_page_title[short_lang] }}</a>
+  </nav>
+  <div class="page-header__row">
+    <h1>{{ include.heading | default: i18n.page_h1[short_lang] }}</h1>
+    <div class="header-actions">
+      <div class="lang-switch" role="group" aria-label="{{ i18n.lang_switch_label[short_lang] }}">
+        {% for entry in i18n_alternates %}
+          {% assign parts = entry | split: "|" %}
+          <a href="{{ parts[1] | relative_url }}" {% if parts[0] == short_lang %}aria-current="true"{% endif %}>{{ parts[0] | upcase }}</a>
+        {% endfor %}
+      </div>
+      {% include theme-toggle.html %}
+    </div>
+  </div>
+</div>

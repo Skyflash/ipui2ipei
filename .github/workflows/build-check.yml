@@ -1,0 +1,32 @@
+name: Build & check
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  build-and-proof:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.4'
+          bundler-cache: true
+
+      - name: Build site
+        run: bundle exec jekyll build
+
+      - name: Check internal links, images and anchors
+        # --swap-urls: il sito ha baseurl /ipui2ipei (project page), quindi
+        # gli href generati sono tipo "/ipui2ipei/it/" ma i file fisici
+        # stanno in _site/it/ (il prefisso lo aggiunge solo il serving di
+        # GitHub Pages) — senza questo, html-proofer segna come rotti tutti
+        # i link interni.
+        run: >-
+          bundle exec htmlproofer ./_site --disable-external --checks Links,Images
+          --swap-urls "^/ipui2ipei/:/"

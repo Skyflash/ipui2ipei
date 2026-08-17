@@ -1,0 +1,59 @@
+{% assign short_lang = page.lang | slice: 0, 2 | default: site.default_lang %}
+{% assign i18n = site.data.i18n %}
+<div class="card">
+  <form novalidate id="converter-form">
+    <div class="field">
+      <label for="ipui">{{ i18n.ipui_label[short_lang] }}</label>
+      <div class="field-row">
+        <input type="text" class="field-input" id="ipui" name="ipui" maxlength="10" autocomplete="off" spellcheck="false">
+        <button type="submit" class="btn btn--primary" id="convert-btn">{{ i18n.convert_button[short_lang] }}</button>
+      </div>
+      <div id="ipui-message" class="field-message" aria-live="polite"></div>
+    </div>
+
+    <div class="field">
+      <label for="ipei">{{ i18n.ipei_label[short_lang] }}</label>
+      <input type="text" id="ipei" name="ipei" maxlength="13" readonly>
+    </div>
+
+    <div class="actions">
+      <label class="checkbox-field">
+        <input type="checkbox" id="verbose" checked>
+        {{ i18n.verbose_checkbox[short_lang] }}
+      </label>
+      <div class="actions-buttons">
+        <button type="button" class="btn btn--ghost" id="reset-btn">{{ i18n.reset_button[short_lang] }}</button>
+      </div>
+    </div>
+  </form>
+
+  <div id="verbose-panel" class="verbose-panel" hidden>
+    <h2 id="emc-heading"></h2>
+    <dl>
+      <dt id="emc-hex-label"></dt><dd id="emc-hex"></dd>
+      <dt id="emc-bin-label"></dt><dd id="emc-bin"></dd>
+      <dt id="emc-dec-label"></dt><dd id="emc-dec"></dd>
+      <dt id="emc-dec-padded-label"></dt><dd id="emc-dec-padded"></dd>
+    </dl>
+
+    <h2 id="psn-heading"></h2>
+    <dl>
+      <dt id="psn-hex-label"></dt><dd id="psn-hex"></dd>
+      <dt id="psn-bin-label"></dt><dd id="psn-bin"></dd>
+      <dt id="psn-dec-label"></dt><dd id="psn-dec"></dd>
+      <dt id="psn-dec-padded-label"></dt><dd id="psn-dec-padded"></dd>
+    </dl>
+
+    <h2 id="checksum-heading"></h2>
+    <dl>
+      <dt id="checksum-base-label"></dt><dd id="checksum-base"></dd>
+      <dt id="checksum-sum-label"></dt><dd id="checksum-sum"></dd>
+      <dt id="checksum-modulo-label"></dt><dd id="checksum-modulo"></dd>
+    </dl>
+
+    <div class="final-result">
+      <h2 id="final-result-heading"></h2>
+      <span id="final-ipei-label"></span>: <span id="final-ipei"></span>
+    </div>
+  </div>
+</div>

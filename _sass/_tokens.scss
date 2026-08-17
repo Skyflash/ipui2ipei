@@ -1,0 +1,108 @@
+// Design token. --color-success (bottone Converti, bordo di validazione)
+// resta verde in entrambi i temi, indipendente dall'accento. --color-accent
+// (link, evidenziazioni, badge, stati attivi) cambia con il tema: blu
+// (stesso di cristiancastellari.it) in chiaro, arancione Gigaset in scuro —
+// un richiamo al mondo DECT di cui parla il tool.
+
+:root {
+  color-scheme: light;
+
+  --color-bg: #ffffff;
+  --color-bg-subtle: #f6f7f9;
+  --color-text: #1a1d21;
+  --color-text-muted: #5b6370;
+  --color-border: #e3e6ea;
+
+  --color-accent: #3385ff;
+  --color-accent-hover: #1e6fe0;
+  --color-accent-subtle: #eaf1ff;
+
+  --color-success: #16a34a;
+  --color-success-hover: #15803d;
+  --color-error: #dc2626;
+  --color-error-subtle: #fdecec;
+
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-mono: ui-monospace, "SF Mono", "Cascadia Code", Consolas, "Liberation Mono", monospace;
+
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.25rem;
+  --text-xl: 1.563rem;
+  --text-2xl: 1.953rem;
+
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 1rem;
+  --space-4: 1.5rem;
+  --space-5: 2rem;
+  --space-6: 3rem;
+
+  --radius: 8px;
+  --shadow-sm: 0 1px 2px rgba(26, 29, 33, 0.06);
+  --shadow-md: 0 4px 16px rgba(26, 29, 33, 0.08);
+  --content-max-width: 760px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --color-bg: #12141a;
+    --color-bg-subtle: #1a1d24;
+    --color-text: #e8eaed;
+    --color-text-muted: #9aa3af;
+    --color-border: #2a2e37;
+
+    --color-accent: #ff7a1a;
+    --color-accent-hover: #ff9640;
+    --color-accent-subtle: #3d2410;
+
+    --color-success: #4ade80;
+    --color-success-hover: #86efac;
+    --color-error: #f87171;
+    --color-error-subtle: #3a1c1c;
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.4);
+  }
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --color-bg: #12141a;
+  --color-bg-subtle: #1a1d24;
+  --color-text: #e8eaed;
+  --color-text-muted: #9aa3af;
+  --color-border: #2a2e37;
+
+  --color-accent: #ff7a1a;
+  --color-accent-hover: #ff9640;
+  --color-accent-subtle: #3d2410;
+
+  --color-success: #4ade80;
+  --color-success-hover: #86efac;
+  --color-error: #f87171;
+  --color-error-subtle: #3a1c1c;
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.4);
+}
+
+:root[data-theme="light"] {
+  color-scheme: light;
+  --color-bg: #ffffff;
+  --color-bg-subtle: #f6f7f9;
+  --color-text: #1a1d21;
+  --color-text-muted: #5b6370;
+  --color-border: #e3e6ea;
+
+  --color-accent: #3385ff;
+  --color-accent-hover: #1e6fe0;
+  --color-accent-subtle: #eaf1ff;
+
+  --color-success: #16a34a;
+  --color-success-hover: #15803d;
+  --color-error: #dc2626;
+  --color-error-subtle: #fdecec;
+  --shadow-sm: 0 1px 2px rgba(26, 29, 33, 0.06);
+  --shadow-md: 0 4px 16px rgba(26, 29, 33, 0.08);
+}

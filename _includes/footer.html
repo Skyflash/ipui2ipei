@@ -1,0 +1,17 @@
+{% assign short_lang = page.lang | slice: 0, 2 | default: site.default_lang %}
+{% assign i18n = site.data.i18n %}
+{% if short_lang == "it" %}{% assign contact_url = "/it/contatti/" %}{% else %}{% assign contact_url = "/en/contact/" %}{% endif %}
+<footer class="site-footer">
+  <p class="standard-compliance">European Telecommunications Standards Institute (ETSI) - EN 300 175-6 Compliant</p>
+  <p>{{ i18n.footer_based_on[short_lang] }} Gorka Hernández, &copy;2014 &middot; {{ i18n.footer_fork_by[short_lang] }} Cristian Castellari, &copy;{{ site.time | date: "%Y" }}</p>
+  <p>
+    <a href="https://www.etsi.org/deliver/etsi_en/300100_300199/30017506/01.07.01_60/en_30017506v010701p.pdf">ETSI EN 300 175-6</a>
+    &middot;
+    <a href="https://github.com/skyflash/ipui2ipei">{{ i18n.footer_project_link[short_lang] }}</a>
+    &middot;
+    <a href="{{ contact_url | relative_url }}">{{ i18n.footer_contact_link[short_lang] }}</a>
+  </p>
+  <p>
+    <a class="btn btn--ghost" href="https://cristiancastellari.it/{{ short_lang }}/">&larr; {{ i18n.footer_back_to_site[short_lang] }}</a>
+  </p>
+</footer>

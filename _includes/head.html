@@ -1,0 +1,38 @@
+{% assign short_lang = page.lang | slice: 0, 2 | default: site.default_lang %}
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="index,follow">
+
+<link rel="icon" type="image/png" href="{{ '/assets/images/favicon.png' | relative_url }}">
+<link rel="shortcut icon" href="{{ '/assets/images/favicon.ico' | relative_url }}" type="image/x-icon">
+<link rel="apple-touch-icon" href="{{ '/assets/images/apple-touch-icon.png' | relative_url }}">
+{% assign touch_icon_sizes = "57,72,76,114,120,144,152,180" | split: "," %}
+{% for size in touch_icon_sizes %}
+<link rel="apple-touch-icon" sizes="{{ size }}x{{ size }}" href="{{ '/assets/images/apple-touch-icon-' | append: size | append: 'x' | append: size | append: '.png' | relative_url }}">
+{% endfor %}
+
+{% seo %}
+
+{% include i18n-alternates.html %}
+{% for entry in i18n_alternates %}
+  {% assign parts = entry | split: "|" %}
+  <link rel="alternate" hreflang="{{ parts[0] }}" href="{{ parts[1] | absolute_url }}">
+{% endfor %}
+{% if page.translation_key %}
+<link rel="alternate" hreflang="x-default" href="{{ '/it/' | absolute_url }}">
+{% endif %}
+
+<link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+
+<script>
+  // Applica subito il tema salvato, prima del paint, per evitare un flash del tema sbagliato.
+  (function () {
+    try {
+      var stored = localStorage.getItem('theme');
+      if (stored === 'light' || stored === 'dark') {
+        document.documentElement.setAttribute('data-theme', stored);
+      }
+    } catch (e) {}
+  })();
+</script>
