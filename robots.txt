@@ -1,10 +1,11 @@
+---
+layout: null
+sitemap:
+  exclude: 'yes'
+---
 User-agent: *
-Disallow: /css/
-Disallow: /fonts/
-Disallow: /js/
-Disallow: /*.json
 
-Sitemap: https://cristiancastellari.it/ipui2ipei/sitemap.xml
+Sitemap: {{ site.url }}{{ site.baseurl }}/sitemap.xml
 
 #                ..oo800ooo..                    ..ooo008oo..
 #            .ox88888888'                          '888888888o.

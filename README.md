@@ -3,7 +3,23 @@ IPUI 2 IPEI
 ###### by Gorka Hernandez
 
 *IPUI 2 IPEI converts DECT phone IPUI codes to standard IPEI ones, all done in an ETSI compliant process.*
-*Built using a modular design and latest Bootstrap version (v3.2.0)*
+
+Live at [cristiancastellari.it/ipui2ipei](https://cristiancastellari.it/ipui2ipei/), in Italian and English.
+
+## Sviluppo locale
+
+Richiede Ruby (con Bundler).
+
+```bash
+bundle install
+bundle exec jekyll serve
+```
+
+Il sito serve da `http://127.0.0.1:4000/ipui2ipei/` (non dalla root: `baseurl` è impostato su `/ipui2ipei`, dato che è una project page che eredita il dominio custom del sito principale).
+
+## Changelog
+
+Le modifiche più significative dalla v1.0.0 in poi (la ricostruzione completa in Jekyll 4 bilingue) sono tracciate in [CHANGELOG.md](CHANGELOG.md).
 
 ---
 
@@ -35,3 +51,7 @@ IPUI 2 IPEI
   * Added short instructions on how to get to the hidden service menu
   * Added favicons
   * Simple SEO support (descriptions, meta keywords and h1/h2 tags)
+
+##### v1.0.0 "Bilingual and Bootstrap-free"
+
+  * Rebuilt from scratch on Jekyll 4 + GitHub Actions, no more Bootstrap/jQuery. Full details in [CHANGELOG.md](CHANGELOG.md).

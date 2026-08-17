@@ -1,0 +1,350 @@
+.card {
+  width: 100%;
+  max-width: var(--content-max-width);
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+  padding: var(--space-5) var(--space-4);
+}
+
+.field {
+  margin-bottom: var(--space-4);
+}
+
+.field label {
+  display: block;
+  font-size: var(--text-sm);
+  font-weight: 600;
+  margin-bottom: var(--space-2);
+}
+
+.field-row {
+  display: flex;
+  gap: var(--space-2);
+  align-items: center;
+}
+
+.field-input {
+  flex: 1;
+}
+
+.field-message {
+  margin-top: var(--space-1);
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: var(--space-2) var(--space-3);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-mono);
+  font-size: var(--text-base);
+  letter-spacing: 0.05em;
+}
+
+input[type="text"]:read-only {
+  background: var(--color-bg-subtle);
+}
+
+input[type="text"].is-valid {
+  border-color: var(--color-success);
+}
+
+input[type="text"].is-invalid {
+  border-color: var(--color-error);
+}
+
+.field-message {
+  font-size: var(--text-xs);
+  min-height: 1.2em;
+}
+
+.field-message.is-error {
+  color: var(--color-error);
+}
+
+.field-message.is-success {
+  color: var(--color-success);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius);
+  font-weight: 600;
+  font-size: var(--text-sm);
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+
+.btn--primary {
+  background: var(--color-success);
+  color: #fff;
+}
+
+.btn--primary:hover,
+.btn--primary:focus-visible {
+  background: var(--color-success-hover);
+  color: #fff;
+}
+
+.btn--ghost {
+  border-color: var(--color-border);
+  color: var(--color-text);
+  background: transparent;
+}
+
+.btn--ghost:hover,
+.btn--ghost:focus-visible {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  margin-top: var(--space-4);
+}
+
+.checkbox-field {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--text-sm);
+}
+
+.actions-buttons {
+  display: flex;
+  gap: var(--space-2);
+}
+
+.verbose-panel {
+  margin-top: var(--space-4);
+  padding: var(--space-3) var(--space-4);
+  background: var(--color-bg-subtle);
+  border-radius: var(--radius);
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+}
+
+.verbose-panel[hidden] {
+  display: none;
+}
+
+.verbose-panel h2 {
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--color-accent);
+  margin-top: var(--space-3);
+  margin-bottom: var(--space-1);
+}
+
+.verbose-panel h2:first-child {
+  margin-top: 0;
+}
+
+.verbose-panel dl {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: var(--space-1) var(--space-3);
+}
+
+.verbose-panel dt {
+  color: var(--color-text-muted);
+}
+
+.verbose-panel dd {
+  word-break: break-word;
+}
+
+.verbose-panel .final-result {
+  margin-top: var(--space-3);
+  padding-top: var(--space-3);
+  border-top: 1px solid var(--color-border);
+  font-size: var(--text-base);
+  font-weight: 700;
+}
+
+.instructions {
+  width: 100%;
+  max-width: var(--content-max-width);
+  margin-top: var(--space-5);
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}
+
+.instructions h2 {
+  font-size: var(--text-base);
+  color: var(--color-text);
+  margin-bottom: var(--space-2);
+}
+
+.instructions kbd {
+  font-family: var(--font-mono);
+  background: var(--color-bg-subtle);
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  padding: 0 0.35em;
+}
+
+// Toggle tema, stesso meccanismo del sito principale (pulsante + localStorage)
+.theme-switch {
+  display: inline-flex;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.theme-switch__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  color: var(--color-text-muted);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.theme-switch__btn + .theme-switch__btn {
+  border-left: 1px solid var(--color-border);
+}
+
+.theme-switch__btn:hover {
+  background: var(--color-bg-subtle);
+  color: var(--color-text);
+}
+
+.theme-switch__btn.is-active {
+  background: var(--color-accent-subtle);
+  color: var(--color-accent);
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+// L'elemento attivo (aria-current) deve risaltare come "sei qui": pill con
+// sfondo tenue e colore accento. Quello cliccabile resta discreto (muted),
+// si accende solo al passaggio del mouse — altrimenti sembra il contrario:
+// il link colorato attira l'occhio come se fosse lui la voce attiva.
+.lang-switch,
+.page-nav {
+  display: inline-flex;
+  gap: var(--space-2);
+  font-size: var(--text-sm);
+  font-weight: 600;
+}
+
+.page-nav {
+  margin-bottom: var(--space-3);
+}
+
+.lang-switch a,
+.page-nav a {
+  color: var(--color-text-muted);
+  padding: 2px var(--space-2);
+  border-radius: 999px;
+}
+
+.lang-switch a:hover,
+.lang-switch a:focus-visible,
+.page-nav a:hover,
+.page-nav a:focus-visible {
+  color: var(--color-accent);
+  text-decoration: none;
+}
+
+.lang-switch a[aria-current="true"],
+.page-nav a[aria-current="true"] {
+  background: var(--color-accent-subtle);
+  color: var(--color-accent);
+  pointer-events: none;
+}
+
+// Pagina Contatti/Contact
+.lead {
+  width: 100%;
+  max-width: var(--content-max-width);
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-5);
+}
+
+.contact-grid {
+  width: 100%;
+  max-width: var(--content-max-width);
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: var(--space-3);
+}
+
+.contact-card {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3);
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  color: var(--color-text);
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.contact-card:hover,
+.contact-card:focus-visible {
+  border-color: var(--color-accent);
+  box-shadow: var(--shadow-sm);
+  text-decoration: none;
+  color: var(--color-text);
+}
+
+.contact-card__badge {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius);
+  background: var(--color-accent-subtle);
+  color: var(--color-accent);
+}
+
+.contact-card__badge svg {
+  display: block;
+}
+
+.contact-card__body {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.contact-card__title {
+  font-weight: 600;
+  font-size: var(--text-sm);
+}
+
+.contact-card__value {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

@@ -1,0 +1,122 @@
+# Stringhe UI del tool, una chiave per etichetta, valore per lingua.
+# Consumate in Liquid come site.data.i18n.<chiave>[short_lang].
+
+page_h1:
+  it: "Conversione da IPUI a IPEI"
+  en: "IPUI to IPEI Conversion"
+nav_converter:
+  it: "Convertitore"
+  en: "Converter"
+nav_label:
+  it: "Navigazione"
+  en: "Navigation"
+
+ipui_label:
+  it: "IPUI:"
+  en: "IPUI:"
+ipei_label:
+  it: "IPEI:"
+  en: "IPEI:"
+convert_button:
+  it: "Converti"
+  en: "Convert"
+reset_button:
+  it: "Reset"
+  en: "Reset"
+verbose_checkbox:
+  it: "Dettagli"
+  en: "Details"
+validation_error:
+  it: "L'IPUI deve contenere almeno 9 caratteri esadecimali."
+  en: "The IPUI must contain at least 9 hexadecimal characters."
+
+# Pannello "Dettagli" — lette dal JS via window.ipui2ipeiLabels
+emc_heading:
+  it: "EMC (16 bit)"
+  en: "EMC (16 bits)"
+psn_heading:
+  it: "PSN (20 bit)"
+  en: "PSN (20 bits)"
+hex_label:
+  it: "Esadecimale"
+  en: "Hexadecimal"
+bin_label:
+  it: "Binario"
+  en: "Binary"
+dec_label:
+  it: "Decimale"
+  en: "Decimal"
+digits_word:
+  it: "cifre"
+  en: "digits"
+final_result_heading:
+  it: "Risultato finale"
+  en: "Final result"
+ipei_result_label:
+  it: "IPEI"
+  en: "IPEI"
+checksum_heading:
+  it: "Checksum (ETSI EN 300 175-6)"
+  en: "Checksum (ETSI EN 300 175-6)"
+checksum_base_label:
+  it: "Numero senza il codice di controllo"
+  en: "Number without check digit"
+checksum_sum_label:
+  it: "Somma di cifre"
+  en: "Sum of digits"
+checksum_modulo_label:
+  it: "Modulo"
+  en: "Modulo"
+checksum_star_note:
+  it: "Si trasforma in *"
+  en: "Becomes *"
+
+# Footer
+footer_project_link:
+  it: "Pagina del progetto"
+  en: "Project page"
+footer_contact_link:
+  it: "Contatti"
+  en: "Contact"
+footer_based_on:
+  it: "Basato sul lavoro originale di"
+  en: "Based on the original work of"
+footer_fork_by:
+  it: "Fork e riscrittura di"
+  en: "Fork and rewrite by"
+footer_back_to_site:
+  it: "Torna al sito"
+  en: "Back to my site"
+
+# Pagina Contatti/Contact
+contact_page_title:
+  it: "Contatti"
+  en: "Contact"
+contact_page_description:
+  it: "Come contattare Cristian Castellari"
+  en: "How to get in touch with Cristian Castellari"
+contact_greeting:
+  it: "Ciao, sono Cristian!"
+  en: "It's-a me, Cristian!"
+contact_lead:
+  it: "Scrivimi pure per una chiacchierata, una collaborazione o solo per dire ciao."
+  en: "Feel free to reach out for a chat, a collaboration, or just to say hi."
+
+# Toggle tema
+theme_group_label:
+  it: "Tema colore"
+  en: "Color theme"
+theme_auto:
+  it: "Tema automatico (segue il sistema)"
+  en: "Automatic theme (follows system)"
+theme_light:
+  it: "Tema chiaro"
+  en: "Light theme"
+theme_dark:
+  it: "Tema scuro"
+  en: "Dark theme"
+
+# Switcher lingua
+lang_switch_label:
+  it: "Cambia lingua"
+  en: "Change language"

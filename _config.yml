@@ -1,0 +1,68 @@
+#
+###################################
+# Site wide configuration
+####################################
+#
+title: IPUI to IPEI Converter
+tagline: "Convertitore di codici IPUI in IPEI per telefoni DECT — ETSI EN 300 175-6"
+description: "Strumento di conversione di codici IPUI in codici IPEI per telefoni DECT, conforme ETSI EN 300 175-6."
+#
+# URL e SEO — project page che eredita il dominio custom del sito
+# principale: baseurl è /ipui2ipei, NON vuoto.
+keywords: ipui, ipei, dect, converter, conversione, etsi, siemens
+baseurl: '/ipui2ipei'
+url: https://cristiancastellari.it
+#
+img_path: /assets/images
+favicon: /assets/images/favicon.png
+
+# Stessi dati di contatto del sito principale (cristiancastellari.it),
+# usati dalla pagina Contatti/Contact.
+author:
+  email: c.castellari@gmail.com
+  linkedin_id: cristiancastellari
+  github_username: skyflash
+  twitter: BloggerStanco
+  bluesky: cristiancastellari.bsky.social
+  facebook_username: cristian.castellari
+
+#
+###################################
+# Jekyll configuration
+####################################
+#
+timezone: Europe/Rome
+markdown: kramdown
+kramdown:
+  input: GFM
+
+lang: it_IT
+default_lang: it
+
+twitter:
+  card: summary_large_image
+  username: BloggerStanco
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-redirect-from
+  - jekyll-target-blank
+
+redirect_from:
+  json: false
+
+# Immagine di default per le card social (og:image/twitter:image), uguale
+# per entrambe le lingue.
+defaults:
+  - scope:
+      path: ""
+    values:
+      image: /assets/images/og.png
+
+sass:
+  sass_dir: _sass
+  style: compressed
+
+encoding: utf-8
+
+exclude: ['README.md', 'CHANGELOG.md', 'Gemfile', 'Gemfile.lock', 'node_modules']
