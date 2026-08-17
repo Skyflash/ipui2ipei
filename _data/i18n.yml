@@ -87,6 +87,9 @@ footer_fork_by:
 footer_back_to_site:
   it: "Torna al sito"
   en: "Back to my site"
+footer_buy_coffee:
+  it: "Offrimi un caffè"
+  en: "Buy me a coffee"
 
 # Pagina Contatti/Contact
 contact_page_title:

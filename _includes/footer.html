@@ -11,7 +11,11 @@
     &middot;
     <a href="{{ contact_url | relative_url }}">{{ i18n.footer_contact_link[short_lang] }}</a>
   </p>
-  <p>
+  <p class="footer-actions">
     <a class="btn btn--ghost" href="https://cristiancastellari.it/{{ short_lang }}/">&larr; {{ i18n.footer_back_to_site[short_lang] }}</a>
+    <a class="btn btn--ghost" href="https://buymeacoffee.com/cristiancastellari">
+      <svg width="16" height="16" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 8h10v5a4 4 0 01-4 4H8a4 4 0 01-4-4V8z" stroke="currentColor" stroke-width="1.4"/><path d="M14 9h1.5a2 2 0 010 4H14" stroke="currentColor" stroke-width="1.4"/><path d="M7 5c0-.8.5-1 .5-1.8S7 2 7 2M10 5c0-.8.5-1 .5-1.8S10 2 10 2" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+      {{ i18n.footer_buy_coffee[short_lang] }}
+    </a>
   </p>
 </footer>
