@@ -106,6 +106,17 @@ input[type="text"].is-invalid {
   color: var(--color-accent);
 }
 
+.btn--accent {
+  background: var(--color-accent);
+  color: #fff;
+}
+
+.btn--accent:hover,
+.btn--accent:focus-visible {
+  background: var(--color-accent-hover);
+  color: #fff;
+}
+
 .actions {
   display: flex;
   align-items: center;
