@@ -22,4 +22,11 @@ jobs:
         run: bundle exec jekyll build
 
       - name: Check internal links, images and anchors
-        run: bundle exec htmlproofer ./_site --disable-external --checks Links,Images
+        # --swap-urls: il sito ha baseurl /ipui2ipei (project page), quindi
+        # gli href generati sono tipo "/ipui2ipei/it/" ma i file fisici
+        # stanno in _site/it/ (il prefisso lo aggiunge solo il serving di
+        # GitHub Pages) — senza questo, html-proofer segna come rotti tutti
+        # i link interni.
+        run: >-
+          bundle exec htmlproofer ./_site --disable-external --checks Links,Images
+          --swap-urls "^/ipui2ipei/:/"
