@@ -1,0 +1,8 @@
+# GitHub funding configuration
+# This file enables the "Sponsor" button on your GitHub repository
+
+# Buy Me a Coffee
+custom: ["https://buymeacoffee.com/cristiancastellari"]
+
+# Uncomment below if you also use GitHub Sponsors
+# github: [Skyflash]
