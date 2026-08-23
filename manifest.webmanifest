@@ -1,0 +1,30 @@
+---
+permalink: /manifest.webmanifest
+---
+{
+  "name": "{{ site.title }}",
+  "short_name": "IPUI→IPEI",
+  "description": "{{ site.description }}",
+  "id": "{{ site.baseurl }}/it/",
+  "start_url": "{{ site.baseurl }}/it/",
+  "scope": "{{ site.baseurl }}/",
+  "lang": "it",
+  "dir": "ltr",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#3385ff",
+  "icons": [
+    {
+      "src": "{{ site.baseurl }}/assets/images/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "{{ site.baseurl }}/assets/images/favicon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}

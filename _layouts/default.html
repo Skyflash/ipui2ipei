@@ -10,5 +10,14 @@
   {% include footer.html %}
   <script src="{{ '/assets/js/theme.js' | relative_url }}"></script>
   <script src="{{ '/assets/js/ipui2ipei.js' | relative_url }}"></script>
+  <script>
+    if ("serviceWorker" in navigator) {
+      window.addEventListener("load", function () {
+        navigator.serviceWorker.register("{{ '/sw.js' | relative_url }}", {
+          scope: "{{ '/' | relative_url }}"
+        });
+      });
+    }
+  </script>
 </body>
 </html>
