@@ -6,3 +6,6 @@ _site
 .vscode
 node_modules
 npm-debug.log
+
+# Report del SEO Monitor (locale, rigenerato ogni settimana)
+SEO-REPORT.md
