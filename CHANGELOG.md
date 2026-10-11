@@ -8,6 +8,7 @@ Tutte le modifiche rilevanti al sito sono documentate in questo file.
 - Testi in `_data/faq.yml`, unica fonte per l'HTML e per il JSON-LD (`_includes/faq.html`): un `@graph` con `SoftwareApplication` e `FAQPage`, oltre al `WebPage` di jekyll-seo-tag.
 - "Gigaset" nella description, nelle keywords e nel titolo delle istruzioni: il report SEO aveva trovato impressioni a zero clic su "gigaset ipui" e "ipei gigaset", e la parola non compariva mai nella pagina.
 - `.gitignore`: escluso `SEO-REPORT.md`, il report locale del SEO Monitor settimanale, rigenerato a ogni run.
+- Skill di Claude Code versionate in `.claude/skills/` (installate con `npx autoskills -a claude-code`), così sono disponibili su tutti i PC.
 
 ## [1.0.0] - 2026-08-18 — Ricostruzione completa: Jekyll 4, bilingue, niente più Bootstrap
 
