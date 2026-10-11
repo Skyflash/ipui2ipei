@@ -1,0 +1,52 @@
+# Domande frequenti, una voce per domanda, testo per lingua.
+# Unica fonte sia per la sezione FAQ visibile sia per il JSON-LD FAQPage
+# (_includes/faq.html): le due cose restano sempre identiche, come chiede Google.
+# Le risposte sono testo semplice (niente HTML): finiscono anche dentro il JSON.
+
+heading:
+  it: "Domande frequenti"
+  en: "Frequently asked questions"
+
+items:
+  - q:
+      it: "Cosa sono l'IPUI e l'IPEI?"
+      en: "What are IPUI and IPEI?"
+    a:
+      it: "L'IPEI è il codice che identifica un telefono cordless DECT/GAP, simile all'IMEI dei cellulari: 13 cifre, le prime 12 sono il codice vero e proprio e l'ultima è un carattere di controllo. L'IPUI è la forma usata dai portatili Siemens e Gigaset: 10 caratteri esadecimali, con una struttura diversa che i centralini di altri produttori non riconoscono come IPEI valido."
+      en: "The IPEI identifies a DECT/GAP cordless phone, much like the IMEI of a mobile phone: 13 digits, the first 12 being the code itself and the last one a check character. The IPUI is the form used by Siemens and Gigaset handsets: 10 hexadecimal characters, with a different structure that other vendors' PBXs don't accept as a valid IPEI."
+  - q:
+      it: "Quando serve convertire l'IPUI in IPEI?"
+      en: "When do I need to convert an IPUI to an IPEI?"
+    a:
+      it: "Quando si registra un portatile Siemens o Gigaset su un centralino o un sistema DECT di un altro produttore, che per l'abbinamento chiede l'IPEI del telefono. Succede spesso nelle installazioni aziendali, dove un cordless Siemens o Gigaset costa molto meno di un terminale dello stesso marchio del centralino."
+      en: "When you register a Siemens or Gigaset handset on a PBX or DECT system from another vendor, which asks for the phone's IPEI to pair it. It happens often in business installations, where a Siemens or Gigaset cordless costs far less than a handset from the PBX's own brand."
+  - q:
+      it: "Come trovo l'IPUI su un telefono Gigaset o Siemens?"
+      en: "How do I find the IPUI on a Gigaset or Siemens phone?"
+    a:
+      it: "Con il portatile in stand-by, premere MENU seguito da * # 0 6 #. Il codice da inserire qui sopra è quello di 10 caratteri esadecimali che compare sul display."
+      en: "With the handset in standby, press MENU followed by * # 0 6 #. The code to enter above is the 10-character hexadecimal one shown on the display."
+  - q:
+      it: "Il risultato finisce con un asterisco: è un errore?"
+      en: "The result ends with an asterisk: is it an error?"
+    a:
+      it: "No. L'ultima cifra dell'IPEI è un codice di controllo calcolato secondo lo standard ETSI EN 300 175-6, e può valere da 0 a 10. Quando vale 10 si scrive come asterisco (*), così l'IPEI resta di 13 caratteri."
+      en: "No. The last digit of the IPEI is a check code calculated according to the ETSI EN 300 175-6 standard, and it can be anything from 0 to 10. When it is 10 it is written as an asterisk (*), so the IPEI stays 13 characters long."
+  - q:
+      it: "Devo inserire nel centralino tutte le 13 cifre o solo le prime 12?"
+      en: "Should I enter all 13 digits in the PBX, or only the first 12?"
+    a:
+      it: "Dipende dal produttore del centralino o del server DECT: alcuni vogliono l'IPEI completo con il codice di controllo, altri solo le prime 12 cifre. Se il sistema rifiuta il codice, provare l'altra forma."
+      en: "It depends on the vendor of the PBX or DECT server: some want the full IPEI including the check code, others only the first 12 digits. If the system rejects the code, try the other form."
+  - q:
+      it: "Come funziona la conversione?"
+      en: "How does the conversion work?"
+    a:
+      it: "Il primo carattere dell'IPUI viene scartato. I 4 caratteri successivi (EMC, 16 bit) vengono convertiti in decimale e portati a 5 cifre, i restanti 5 (PSN, 20 bit) in decimale a 7 cifre. In coda si aggiunge il codice di controllo, una somma pesata modulo 11. Attivando Dettagli, il tool mostra ogni passaggio."
+      en: "The first character of the IPUI is dropped. The next 4 characters (EMC, 16 bits) are converted to decimal and padded to 5 digits, the remaining 5 (PSN, 20 bits) to decimal padded to 7 digits. The check code, a weighted sum modulo 11, is appended at the end. With Details turned on, the tool shows every step."
+  - q:
+      it: "I codici inseriti vengono inviati da qualche parte?"
+      en: "Are the codes I enter sent anywhere?"
+    a:
+      it: "No. Il calcolo avviene interamente nel browser, e il tool si può installare e usare anche offline."
+      en: "No. The calculation happens entirely in the browser, and the tool can be installed and used offline too."

@@ -1,0 +1,48 @@
+{% comment %}
+  Sezione FAQ visibile + JSON-LD (FAQPage e SoftwareApplication), entrambi da
+  _data/faq.yml: il testo delle risposte nel markup e nei dati strutturati è lo stesso.
+{% endcomment %}
+{% assign short_lang = page.lang | slice: 0, 2 | default: site.default_lang %}
+{% assign faq = site.data.faq %}
+<section class="faq" aria-labelledby="faq-heading">
+  <h2 id="faq-heading">{{ faq.heading[short_lang] }}</h2>
+  {% for item in faq.items %}
+  <details>
+    <summary>{{ item.q[short_lang] }}</summary>
+    <p>{{ item.a[short_lang] }}</p>
+  </details>
+  {% endfor %}
+</section>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "name": {{ site.title | jsonify }},
+      "description": {{ page.description | jsonify }},
+      "url": {{ page.url | absolute_url | jsonify }},
+      "inLanguage": {{ short_lang | jsonify }},
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "Web browser",
+      "isAccessibleForFree": true,
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
+      "author": { "@type": "Person", "name": "Cristian Castellari", "url": "https://cristiancastellari.it/" }
+    },
+    {
+      "@type": "FAQPage",
+      "inLanguage": {{ short_lang | jsonify }},
+      "mainEntity": [
+        {% for item in faq.items %}
+        {
+          "@type": "Question",
+          "name": {{ item.q[short_lang] | jsonify }},
+          "acceptedAnswer": { "@type": "Answer", "text": {{ item.a[short_lang] | jsonify }} }
+        }{% unless forloop.last %},{% endunless %}
+        {% endfor %}
+      ]
+    }
+  ]
+}
+</script>

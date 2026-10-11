@@ -359,3 +359,37 @@ input[type="text"].is-invalid {
   text-overflow: ellipsis;
   white-space: nowrap;
 }
+
+// FAQ sotto le istruzioni: stessa larghezza e tono di .instructions
+.faq {
+  width: 100%;
+  max-width: var(--content-max-width);
+  margin-top: var(--space-5);
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}
+
+.faq h2 {
+  font-size: var(--text-base);
+  color: var(--color-text);
+  margin-bottom: var(--space-2);
+}
+
+.faq details {
+  border-top: 1px solid var(--color-border);
+  padding: var(--space-2) 0;
+}
+
+.faq details:last-of-type {
+  border-bottom: 1px solid var(--color-border);
+}
+
+.faq summary {
+  cursor: pointer;
+  color: var(--color-text);
+  font-weight: 600;
+}
+
+.faq details p {
+  margin: var(--space-2) 0 0;
+}
